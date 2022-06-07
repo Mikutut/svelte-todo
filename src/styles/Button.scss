@@ -1,0 +1,33 @@
+@mixin button($fontSize: 1rem, $minWidth: 150px, $maxWidth: auto, $minHeightMobile: 50px) {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background-color: #ff9f00;
+  color: black;
+  transition: transform .2s, background-color .2s;
+  font-size: $fontSize;
+	min-width: $minWidth;
+	max-width: $maxWidth;
+
+  & > span {
+    width: 100%;
+
+    &.with-icon {
+      margin-left: 1rem;
+    }
+  }
+
+	@media screen and (max-width: 768px) {
+		& {
+			min-height: $minHeightMobile;
+		}
+	}
+  @media screen and (min-width: 769px) {
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+};
